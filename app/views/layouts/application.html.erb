@@ -8,9 +8,35 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if user_signed_in?  %>
+      <%= javascript_pack_tag 'nav', 'data-turbolinks-track': 'reload' %> 
+    <% end %>
   </head>
 
   <body>
+    <header>
+      <h1 class="header__logo">CakeTabero</h1>
+        <% if user_signed_in? %>
+        <div class="nav">  
+          <ul class="accordion">
+            <li class="accordion__item">Navi</li>
+            <li class="accordion__item"><%= link_to "Top", root_path %></li>
+            <li class="accordion__item"><%= link_to "Cart", root_path %></li>
+            <li class="accordion__item"><%= link_to "User", users_path %></li>
+            <li class="accordion__item">
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        </div>
+        <% else %>
+          <li>
+            <%= link_to "新規登録", new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
+        <% end %>
+      </header>
     <%= yield %>
   </body>
 </html>

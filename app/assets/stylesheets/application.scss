@@ -1,0 +1,98 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin-top: 50px;
+}
+
+header{
+  height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header__logo{
+  text-align: center;
+  background-color: #dcdcdc;
+}
+
+
+
+.accordion{
+  
+  position: absolute;
+  top: 50px;
+  right:0;
+  
+  
+
+
+  &__item {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dcdcdc;
+    color: black;
+    padding: 10px;
+    margin:10px;
+    text-align: center;
+    list-style: none;
+    overflow: hidden;
+    transition: opacity 0.8s;
+    
+    &.active{
+      background-color: black;
+      color: gold;
+    }
+    
+    &:hover,
+    &:active{
+      background-color: black;
+      color: gold;
+      
+      & > a{
+        color: gold;
+      }
+    }
+    
+    &:not(:first-child) {
+      height: 0;
+      opacity: 0;
+      padding: 0;
+      margin: 0;
+      
+      &.visible {
+       
+        height: 70px;
+        opacity: 1;
+        padding: 10px;
+        margin:10px;
+        
+      } 
+    }
+  }
+}
+
+
