@@ -11,10 +11,14 @@
     <% if user_signed_in?  %>
       <%= javascript_pack_tag 'nav', 'data-turbolinks-track': 'reload' %> 
     <% end %>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <header>
+    <header class="header">
       <h1 class="header__logo">CakeTabero</h1>
         <% if user_signed_in? %>
         <div class="nav">  
@@ -28,13 +32,6 @@
             </li>
           </ul>
         </div>
-        <% else %>
-          <li>
-            <%= link_to "新規登録", new_user_registration_path %>
-          </li>
-          <li>
-            <%= link_to "ログイン", new_user_session_path %>
-          </li>
         <% end %>
       </header>
     <%= yield %>
