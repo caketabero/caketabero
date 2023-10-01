@@ -44,12 +44,12 @@ body {
 
 
 .accordion{
-  
+
   position: absolute;
   top: 65px;
   right:0;
-  
-  
+
+
 
 
   &__item {
@@ -67,38 +67,53 @@ body {
     list-style: none;
     overflow: hidden;
     transition: opacity 0.8s;
-    
+
     &.active{
       background-color: black;
       color: gold;
     }
-    
+
     &:hover,
     &:active{
       background-color: black;
       color: gold;
-      
+
       & > a{
         color: gold;
       }
     }
-    
+
     &:not(:first-child) {
       height: 0;
       opacity: 0;
       padding: 0;
       margin: 0;
-      
+
       &.visible {
-       
+
         height: 60px;
         opacity: 1;
         padding: 10px;
         margin:10px;
-        
-      } 
+
+      }
     }
   }
 }
 
+.flash {
+  padding: 10px;
+  text-align: center;
 
+  &__notice {
+    color: #004085;
+    background-color: #cce5ff;
+    border-bottom: 1px solid #b8daff;
+  }
+
+  &__alert {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-bottom: 1px solid #f5c6cb;
+  }
+}
