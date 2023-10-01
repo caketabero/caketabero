@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_01_053703) do
+ActiveRecord::Schema.define(version: 2023_10_01_072846) do
+
+  create_table "cakes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "genre_id", null: false
+    t.string "cake_name", null: false
+    t.text "explanation", null: false
+    t.integer "stock", null: false
+    t.string "cost", null: false
+    t.string "created_name", null: false
+    t.string "updated_name", null: false
+    t.boolean "deleted_flag", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
