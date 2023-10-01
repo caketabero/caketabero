@@ -20,27 +20,33 @@
 }
 
 body {
-  margin-top: 50px;
+  margin-top: 65px;
 }
 
-header{
-  height: 50px;
+.header{
+  height: 65px;
   position: fixed;
   top: 0;
   width: 100%;
+  background-color: #e6b8af;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__logo{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+  }
 }
 
-.header__logo{
-  text-align: center;
-  background-color: #dcdcdc;
-}
 
 
 
 .accordion{
   
   position: absolute;
-  top: 50px;
+  top: 65px;
   right:0;
   
   
@@ -48,8 +54,8 @@ header{
 
   &__item {
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,7 +91,7 @@ header{
       
       &.visible {
        
-        height: 70px;
+        height: 60px;
         opacity: 1;
         padding: 10px;
         margin:10px;
