@@ -1,10 +1,8 @@
 <% if current_user.admin_flag %>
   <div class="container button__container">
-    <%= form_with url: sort_users_path, method: :get, local: false do |f| %>
-      <%= f.submit '全員', id: 'everyone-button', class: 'button' %>
-      <%= f.submit '管理者', id: 'admin-button', class: 'button' %>
-      <%= f.submit '顧客', id: 'customer-button', class: 'button' %>
-    <% end %>
+    <%= link_to '全員', sort_users_path(type: 'everyone'), remote: true, id: 'everyone-button', class: btn_classes[0] %>
+    <%= link_to '管理者', sort_users_path(type: 'admin'), remote: true, id: 'admin-button', class: btn_classes[1] %>
+    <%= link_to '顧客', sort_users_path(type: 'customer'), remote: true, id: 'customer-button', class: btn_classes[2] %>
   </div>
 <% end %>
 

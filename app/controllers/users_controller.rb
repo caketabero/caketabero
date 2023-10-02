@@ -19,14 +19,17 @@ class UsersController < ApplicationController
   end
 
   def sort
-    @type = params[:commit]
-
-    if @type == '全員'
+    if params[:type] == 'everyone'
       @users = User.all
-    elsif @type == '顧客'
-      @users = User.where(admin_flag: false)
-    else
+      @btn_classes = ['button button__active', 'button', 'button']
+
+    elsif params[:type] == 'admin'
       @users = User.where(admin_flag: true)
+      @btn_classes = ['button', 'button button__active', 'button']
+
+    else
+      @users = User.where(admin_flag: false)
+      @btn_classes = ['button', 'button', 'button button__active']
     end
   end
 
