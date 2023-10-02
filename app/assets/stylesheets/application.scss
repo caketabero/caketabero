@@ -178,6 +178,7 @@ body {
 .flash {
   padding: 10px;
   text-align: center;
+  animation: fade-out 1s linear 1.5s forwards;
 
   &__notice {
     color: #004085;
@@ -189,5 +190,13 @@ body {
     color: #721c24;
     background-color: #f8d7da;
     border-bottom: 1px solid #f5c6cb;
+  }
+
+  @keyframes fade-out {
+    from { opacity: 1 }
+    to {
+      display: none;
+      opacity: 0
+    }
   }
 }
