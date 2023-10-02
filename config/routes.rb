@@ -8,5 +8,8 @@ Rails.application.routes.draw do
 
   root :to => "homes#top"
   get 'home/about' => 'homes#about', as: 'about'
-resources :cakes
+  resources :cakes
+  get 'cake/thanks' => 'cakes#thanks', as: 'thanks'  
+  
+  
 end
