@@ -20,7 +20,7 @@
 }
 
 body {
-  margin-top: 65px;
+  padding-top: 65px;
 }
 
 .button {
@@ -67,6 +67,22 @@ body {
   &:hover::before {
     transform: translate(-50%, -50%) scale(1.5);
     opacity: 0.1;
+  }
+}
+
+.heading {
+  text-align: center;
+  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  &::before {
+    content: "~ ";
+  }
+
+  &::after {
+    content: " ~";
   }
 }
 
