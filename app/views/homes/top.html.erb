@@ -1,27 +1,14 @@
 <%= stylesheet_link_tag 'homes', media: 'all', 'data-turbolinks-track': 'reload' %>
-
 <div class="slider-container">
-  <div class="wrapper">
-    <%= image_tag 'cake.image/cake.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake2.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake3.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake4.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake5.jpg', class: 'slide' %>
-  </div>
-  <div class="wrapper">
-    <%= image_tag 'cake.image/cake.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake2.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake3.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake4.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake5.jpg', class: 'slide' %>
-  </div>
-  <div class="wrapper">
-    <%= image_tag 'cake.image/cake.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake2.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake3.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake4.jpg', class: 'slide' %>
-    <%= image_tag 'cake.image/cake5.jpg', class: 'slide' %>
-  </div>
+  <% @image_slide_animation_array.each do |i| %>
+
+    <div class="wrapper">
+      <!--each文を二つ廻す-->
+      <% i["image"].each do |j| %>
+        <%= image_tag j, class: 'slide' %>
+      <% end %>     
+    </div>
+  <% end %>
 </div>
 
 <div id="typewriter-text" data-current-user-name="<%= @user.name %>"></div>
