@@ -86,6 +86,16 @@ body {
   }
 }
 
+.container {
+  width: 90vw;
+  max-width: 1320px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 576px) {
+    width: 80%;
+  }
+}
+
 .header{
   height: 65px;
   position: fixed;
