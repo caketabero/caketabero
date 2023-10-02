@@ -23,6 +23,53 @@ body {
   margin-top: 65px;
 }
 
+.button {
+  color: white;
+  background-color: brown;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 8px 26px;
+  font-size: 16px;
+
+  position: relative;
+  overflow: hidden;
+
+  // button要素の場合、下記でスタイルをリセット
+  cursor: pointer;
+  border: none;
+  outline: none;
+  appearance: none;
+
+  &__sm {
+    font-size: 14px;
+    padding: 4px 18px;
+  }
+
+  &__lg {
+    font-size: 20px;
+    padding: 12px 32px;
+  }
+
+  &::before {
+    content: '';
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    padding-top: 100%;
+    transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  &:hover::before {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.1;
+  }
+}
+
 .header{
   height: 65px;
   position: fixed;
