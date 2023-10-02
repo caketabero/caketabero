@@ -1,3 +1,24 @@
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.container {
+ width: 100%;
+ margin: 50px auto;
+ display: flex;
+ align-items: center;
+ overflow: hidden;
+}
+
+.wrapper {
+ display: flex;
+ animation: slide-flow 15s infinite linear 1s both;
+}
+
+.slide{
+ width: 200px;
+ height: 100px;
+ object-fit:cover;
+ border: 1px solid #ddd;
+}
+
+@keyframes slide-flow {
+ 0% {transform: translateX(0);}
+ 100% {transform: translateX(-100%);}
+}

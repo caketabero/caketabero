@@ -32,6 +32,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
   &__logo{
   font-family: 'Playfair Display', serif;
   font-weight: normal;
@@ -46,7 +47,7 @@ body {
 .accordion{
   
   position: absolute;
-  top: 65px;
+  top: 100px;
   right:0;
   
   
