@@ -10,6 +10,4 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about', as: 'about'
   resources :cakes
   get 'cake/thanks' => 'cakes#thanks', as: 'thanks'  
-  
-  
 end

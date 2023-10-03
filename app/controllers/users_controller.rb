@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     end  
 
       render 'edit'
-    end
   end
 
   def sort
