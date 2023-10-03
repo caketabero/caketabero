@@ -13,6 +13,10 @@
         <% next %>
       <% end %>
 
+     <% if user.deleted_flag == true %>
+      <% next %>
+     <% end %>
+
       <% if user.id == current_user.id %>
         <li class="userlist__item currentuser">
           <%= link_to user.name, edit_user_path(user.id) %>
