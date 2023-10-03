@@ -1,3 +1,4 @@
+
 if (location.href.slice( -1 ) == "/"){
 
   window.addEventListener('load', () => {
