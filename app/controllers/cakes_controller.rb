@@ -3,8 +3,6 @@ class CakesController < ApplicationController
       @user = current_user
       # @cakes = Cake.all
     end
-    
-
 
     def show
       @cake = Cake.find(params[:id])
@@ -17,32 +15,13 @@ class CakesController < ApplicationController
     end
     
     def create
-
-        @cake = Cake.new(cake_params)
-        @cake.user_id = current_user.id
-      if @cake.save
-        redirect_to cakes_path
-      else
-        render :new  
-      end    
-    end
-    
-    private
-    def cake_params 
-      params.require(:cake).permit(:product_name, :price, :stock)     
-    end
-end 
-
-      @cake= cake.new(cake_params)
-      @cakes = Cake.all
-      if @cake.save
-        redirect_to cakes_path(@cake)
-        flash[:notice] = 'Cake create successfully'
-      else
-        @cakes = Cake.all
-        flash[:alert] = 'Cake not create successfully'
-        render 'new'
-      end
+     @cake = Cake.new(cake_params)
+      @cake.user_id = current_user.id
+     if @cake.save
+      redirect_to cakes_path
+     else
+      render :new  
+     end    
     end
     
     def edit
@@ -50,26 +29,25 @@ end
     end
 
     def update
-    @cake = Cake.find(params[:id])
-    if @cake.update(cake_params)
+      @cake = Cake.find(params[:id])
+     if @cake.update(cake_params)
       flash[:notice] = 'Cake update successfully'
       redirect_to cakes_path(@cake)
-    else
+     else
       render "edit"
+     end
     end
-  end
 
-  def destroy
-    @cake = Cake.find(params[:id])
-    @cake.destroy
-    redirect_to cakes_path
-    flash[:notice] = "Cake was successfully destroyed."
-  end
-  
-  def cake_params
-    params.require(:cake).permit(:title, :body, :cost)
-  end
+    def destroy
+      @cake = Cake.find(params[:id])
+      @cake.destroy
+      redirect_to cakes_path
+      flash[:notice] = "Cake was successfully destroyed."
+    end
 
+      def cake_params
+        params.require(:cake).permit(:cake_name, :cost, :stock)
+      end
 end
 
 
