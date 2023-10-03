@@ -18,25 +18,24 @@ class UsersController < ApplicationController
 
        flash[:error] = "user was error create"
       render :edit
-    end  
+    end
 
       render 'edit'
   end
 
   def sort
-    if params[:type] == 'everyone'
+    if params[:pushed_button] == '全員'
       @users = User.all
-      @btn_classes = ['button button__active', 'button', 'button']
+      @active_button_index = 0
 
-    elsif params[:type] == 'admin'
+    elsif params[:pushed_button] == '管理者'
       @users = User.where(admin_flag: true)
-      @btn_classes = ['button', 'button button__active', 'button']
+      @active_button_index = 1
 
     else
       @users = User.where(admin_flag: false)
-      @btn_classes = ['button', 'button', 'button button__active']
+      @active_button_index = 2
     end
-
   end
 
   private

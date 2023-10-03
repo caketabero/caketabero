@@ -1,0 +1,30 @@
+<% if current_user.admin_flag %>
+  <div class="container button__container">
+    <% sort_buttons_text.each_with_index do |button_text, i| %>
+      <% button_class = active_button_index == i ? 'button button__active' : 'button' %>
+      <%= link_to button_text, send(sort_path, pushed_button: button_text), class: button_class, remote: true %>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="container">
+  <ul class="userlist">
+    <% if model_name == 'User' %>
+      <% models.each do |model| %>
+        <% if model.admin_flag && !current_user.admin_flag %>
+          <% next %>
+        <% end %>
+
+        <% if model.id == current_user.id %>
+          <li class="userlist__item currentuser">
+            <%= link_to model.name, edit_user_path(model.id) %>
+          </li>
+        <% else %>
+          <li class="userlist__item">
+            <%= model.name %>
+          </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

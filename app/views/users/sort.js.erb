@@ -1,1 +1,7 @@
-$('#userlist').html(" <%= j(render 'list', users: @users, btn_classes: @btn_classes) %> ");
+$('#userlist').html(" <%= j (
+  render 'layouts/list',
+      model_name: 'User',
+      models: @users,
+      sort_path: 'sort_users_path',
+      sort_buttons_text: ['全員', '管理者', '顧客'],
+      active_button_index: @active_button_index ) %> ");
