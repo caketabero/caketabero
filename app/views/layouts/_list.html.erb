@@ -32,6 +32,13 @@
       <% models.each do |model| %>
         <li class="list__item">
           <%= link_to model.cake_name, cake_path(model.id) %>
+          <p>￥<%= model.cost %></p>
+          <small><%= model.genre.name %></small>
+          <% if current_user.admin_flag %>
+            <p>
+              <%= link_to '編集', edit_cake_path(model.id), class: 'button button__sm' %>
+            </p>
+          <% end %>
         </li>
       <% end %>
     <% end %>
