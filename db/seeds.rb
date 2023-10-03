@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+########## ユーザー
 # 五十嵐さん
 User.create!(
   name: "Igarashi",
@@ -56,8 +58,86 @@ User.create!(
   )
 end
 
-# ジャンル
+
+########## ジャンル
+Genre.create!(name: "All")
+Genre.create!(name: "ケーキ")
 Genre.create!(name: "タルト")
 Genre.create!(name: "チョコレート系")
 Genre.create!(name: "季節系")
-Genre.create!(name: "ケーキ")
+Genre.create!(name: "その他")
+
+
+########## ケーキ一覧の配列
+cakes = [
+  # ケーキ
+  [
+    'ミルクレープ',
+    'ショートケーキ',
+    'レアチーズケーキ',
+    'ベイクドチーズケーキ'
+  ],
+
+  # タルト
+  [
+    'チーズタルト',
+    'チョコレートタルト',
+    '3種のベリータルト',
+    '生チョコタルト',
+    'チーズタルト',
+    'エッグタルト',
+    'プリンタルト',
+    'タルトタタン'
+  ],
+
+  # チョコレート系
+  [
+    'チョコレートケーキ',
+    'フォンダンショコラ',
+    'ガトーショコラ',
+    '生チョコケーキ'
+  ],
+
+  # 季節系
+  [
+    'ブッシュドノエル',
+    'モンブラン',
+    '桃のケーキ',
+    'マスカットのケーキ'
+  ],
+
+  # その他
+  [
+    'パウンドケーキ',
+    'ティラミス',
+    'アップルパイ',
+    'レモンパイ',
+    'パンプキンパイ',
+    'シュークリーム',
+    'プリン',
+    'エクレア'
+  ]
+]
+
+cakes.each_with_index do |genre_cakes, i|
+  if i == 3
+    k = 3 # 季節系ケーキの制作者はひろきさん
+  elsif i == 4
+    k = 1 # その他のケーキの制作者は一稀さん
+  else
+    k = i+1
+  end
+
+  genre_cakes.each_with_index do |cake, j|
+    Cake.create(
+      user_id: k,
+      genre_id: i+2, # Allジャンルが存在する為
+      cake_name: cake,
+      explanation: "#{cake}の説明です。",
+      stock: 20,
+      cost: 300 + i * 100,
+      created_name: User.find(i+1).name,
+      updated_name: User.find(i+1).name
+    )
+  end
+end

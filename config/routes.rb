@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   root :to => "homes#top"
   get 'home/about' => 'homes#about', as: 'about'
-  resources :cakes
-  get 'cake/thanks' => 'cakes#thanks', as: 'thanks'  
+  resources :cakes, only: [:index, :show, :edit, :destory, :update] do
+    collection do
+      get 'sort'
+    end
+  end
+  get 'cake/thanks' => 'cakes#thanks', as: 'thanks'
 end
