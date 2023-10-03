@@ -16,6 +16,10 @@
           <% next %>
         <% end %>
 
+        <% if model.deleted_flag %>
+          <% next %>
+        <% end %>
+
         <% if model.id == current_user.id %>
           <li class="list__item currentuser">
             <%= link_to model.name, edit_user_path(model.id) %>
@@ -30,6 +34,10 @@
     <!--ケーキ一覧の場合-->
     <% elsif model_name == 'Cake' %>
       <% models.each do |model| %>
+        <% if model.deleted_flag %>
+          <% next %>
+        <% end %>
+
         <li class="list__item">
           <%= link_to model.cake_name, cake_path(model.id) %>
           <p>￥<%= model.cost %></p>
