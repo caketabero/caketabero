@@ -9,11 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <% if user_signed_in?  %>
-      <%= javascript_pack_tag 'nav', 'data-turbolinks-track': 'reload' %> 
+      <%= javascript_pack_tag 'nav', 'data-turbolinks-track': 'reload' %>
     <% end %>
 
-    <%= javascript_pack_tag 'typewriter', 'data-turbolinks-track': 'reload' %> 
-    <%= javascript_pack_tag 'cake_index', 'data-turbolinks-track': 'reload' %> 
+    <%= javascript_pack_tag 'typewriter', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'cake_index', 'data-turbolinks-track': 'reload' %>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,8 @@
   <body>
     <header class="header">
       <h1 class="header__logo">CakeTabero</h1>
-        <% if user_signed_in? %>
-        <div class="nav">  
+      <% if user_signed_in? %>
+        <div class="nav">
           <ul class="accordion">
             <li class="accordion__item">Navi</li>
             <li class="accordion__item"><%= link_to "Top", root_path %></li>
@@ -35,8 +35,21 @@
             </li>
           </ul>
         </div>
-        <% end %>
-      </header>
+      <% end %>
+    </header>
+
+    <% flash.each do |key, value| %>
+      <% if key == 'alert' %>
+        <div class="flash flash__alert">
+          <%= value %>
+        </div>
+      <% elsif key == 'notice' %>
+        <div class="flash flash__notice">
+          <%= value %>
+        </div>
+      <% end %>
+    <% end %>
+
     <%= yield %>
   </body>
   <footer></footer>
