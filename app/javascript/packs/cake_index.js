@@ -8,10 +8,29 @@ if (location.href.slice( -5 ) == "cakes"){
     const type= () => {
       textDOM.innerHTML += text[index];
       index++;
-      if (index >= text.length - 1) {
+      if (index >= text.length) {
         clearInterval(intervalId);
       }
     }
+    const cart = document.querySelectorAll(".cart__action");
+      cart[0].addEventListener('click',() => {
+      cart[0].classList.toggle("active");
+      for (let i = 1; i < cart.length; i++) {
+        cart[i].classList.toggle("visible");
+        }
+      });
+    
+    // $(".cart").click(function(){
+    //   $(this).toggleClass('active');
+    //     $("#cart-text").toggleClass('panelactive');
+    // });
+    
+    // $("#cart-text a").click(function(){
+    //   $(".cart").removeClass('active');
+    //   $("#cart-text").removeClass('panelactive');
+    // })
+    
     const intervalId = setInterval(type, delay);
   });
 }
+
