@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :cakes
+
   validates :name, presence: true, length: { minimum: 1, maximum: 255 }
   validates :email, presence: true, uniqueness: true, length: { minimum: 1, maximum: 255 }
   validates :telephone_number, presence: true, length: { minimum: 9, maximum: 11 }
