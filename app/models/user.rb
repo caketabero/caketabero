@@ -12,4 +12,8 @@ class User < ApplicationRecord
   # validates :encrypted_password, presence: true, length: { minimum: 8, maximum:255 }
   # validates :admin_flag, presence: true
   # validates :deleted_flag, presence: true
+  
+  def change
+    add_column :users, deleted_flag, :boolean, default: false
+  end
 end

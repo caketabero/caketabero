@@ -23,5 +23,6 @@
   <%=f.password_field :password %><br>
 
   <%= f.submit "Update" %>
-
 <% end %>
+
+<%= link_to "destroy", user_path, method: :delete %>
