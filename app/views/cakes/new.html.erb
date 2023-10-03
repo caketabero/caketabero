@@ -1,4 +1,3 @@
-
 <% if @cake.errors.any? %>
  <%= @cake.errors.count %>件のエラーが発生しました
  <ul>
@@ -9,17 +8,16 @@
 <% end %>
 
 <h1>New Cake</h1>
-<%= form_with model: @cake, local: true do |f|%> 
-  <%=f.label :product_name %><br>
-  <%=f.text_field :name %><br>
+<%= form_with model: @cake do |f| %>
+ <h4>Product name</h4>
+ <%= f.text_field :cake_name %>
  
-  <%=f.label :price %><br>
-  <%=f.text_field :price %><br>
+  <h4>cost</h4>
+ <%= f.number_field :cost %>
  
-  <%=f.label :stock %><br>
-  <%=f.text_field :stock %><br
-  
-  <%= f.submit "create" %>
+  <h4>stock</h4>
+ <%= f.number_field :stock %>
  
+ <%= f.submit 'create' %>
 <% end %>
 
