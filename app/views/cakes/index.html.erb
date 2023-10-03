@@ -1,5 +1,14 @@
-<h2>index</h2>
-      <br>
+<h2 class="heading">Lineup</h2>
+
+<div id="cakelist">
+  <%= render 'layouts/list',
+      model_name: 'Cake',
+      models: @cakes,
+      sort_path: 'sort_cakes_path',
+      sort_buttons_text: @genre_names,
+      active_button_index: 0 %>
+</div>
+     <br>
       <br>
       <br>
       <br>
@@ -33,3 +42,5 @@
       一番下
     </div>
 </div>
+
+
