@@ -8,7 +8,8 @@
 <% end %>
 
 <div class="container">
-  <ul class="userlist">
+  <ul class="list">
+    <!--ユーザー一覧の場合-->
     <% if model_name == 'User' %>
       <% models.each do |model| %>
         <% if model.admin_flag && !current_user.admin_flag %>
@@ -16,14 +17,22 @@
         <% end %>
 
         <% if model.id == current_user.id %>
-          <li class="userlist__item currentuser">
+          <li class="list__item currentuser">
             <%= link_to model.name, edit_user_path(model.id) %>
           </li>
         <% else %>
-          <li class="userlist__item">
+          <li class="list__item">
             <%= model.name %>
           </li>
         <% end %>
+      <% end %>
+
+    <!--ケーキ一覧の場合-->
+    <% elsif model_name == 'Cake' %>
+      <% models.each do |model| %>
+        <li class="list__item">
+          <%= link_to model.cake_name, cake_path(model.id) %>
+        </li>
       <% end %>
     <% end %>
   </ul>
