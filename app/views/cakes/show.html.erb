@@ -1,0 +1,23 @@
+<h2>ケーキ詳細</h2>
+<table>
+  <tr>
+	  <th>名前</th>
+	  <th><%= cake.name %></th>
+  </tr>
+  <tr>
+	  <th>説明文</th>
+	  <th><%= cake.explanation %></tkh>
+  </tr>
+  <tr>
+	  <th>値段</th>
+	  <th><%= cake.cost %></th>
+  </tr>
+  <tr>
+	  <th>ジャンル</th>
+	  <th><%= cake.genre %></th>
+  </tr>
+</table> 
+
+<%= link_to "ケーキ一覧へ", cakes_path(@cakes), class: "button" %>
+  
+  
