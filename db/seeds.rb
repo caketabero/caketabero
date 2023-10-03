@@ -57,7 +57,7 @@ User.create!(
 end
 
 # ジャンル
+Genre.create!(name: "ケーキ")
 Genre.create!(name: "タルト")
 Genre.create!(name: "チョコレート系")
 Genre.create!(name: "季節系")
-Genre.create!(name: "ケーキ")
