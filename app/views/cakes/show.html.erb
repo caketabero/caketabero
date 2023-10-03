@@ -2,19 +2,19 @@
 <table>
   <tr>
 	  <th>名前</th>
-	  <th><%= cake.name %></th>
+	  <th><%= @cake.cake_name %></th>
   </tr>
   <tr>
 	  <th>説明文</th>
-	  <th><%= cake.explanation %></tkh>
+	  <th><%= @cake.explanation %></tkh>
   </tr>
   <tr>
 	  <th>値段</th>
-	  <th><%= cake.cost %></th>
+	  <th>￥<%= @cake.cost %></th>
   </tr>
   <tr>
 	  <th>ジャンル</th>
-	  <th><%= cake.genre %></th>
+	  <th><%= @cake.genre.name %></th>
   </tr>
 </table> 
 
