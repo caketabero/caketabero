@@ -1,0 +1,23 @@
+<% if @cake.errors.any? %>
+ <%= @cake.errors.count %>件のエラーが発生しました
+ <ul>
+  <% @cake.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+  <% end %>
+ </ul>
+<% end %>
+
+<h1>New Cake</h1>
+<%= form_with model: @cake, local: true do |f|%> 
+  <%=f.label :product_name %><br>
+  <%=f.text_field :name %><br>
+ 
+  <%=f.label :price %><br>
+  <%=f.text_field :price %><br>
+ 
+  <%=f.label :stock %><br>
+  <%=f.text_field :stock %><br
+  
+  <%= f.submit "create" %>
+ 
+<% end %>
