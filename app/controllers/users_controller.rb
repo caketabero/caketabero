@@ -5,16 +5,18 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    redirect_to index_user_path(current_user) unless @user == current_user
+    redirect_to users_path(current_user) unless @user == current_user
   end
   
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
        @user.save
-      redirect_to index_user_path(current_user)
+       flash[:notice] = "You hava update user successfully."
+       redirect_to users_path(current_user)
     else
-      render 'edit'  
+       flash[:error] = "user was error create"
+      render :edit
     end  
   end
   
