@@ -1,13 +1,19 @@
-<h2>Log in</h2>
+<div class="sign"> 
+  <h2>Log in</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <div class="text__email">
+      <%= f.label :email %>
+    </div>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <div class="text__password">
+      <%= f.label :password %>
+    </div>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
@@ -19,8 +25,10 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "button__sm" %>
   </div>
 <% end %>
 
+<div class="actions">
 <%= render "devise/shared/links" %>
+</div>
