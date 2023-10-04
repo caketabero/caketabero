@@ -16,7 +16,7 @@
         color: white;
         display: block;
         height: 100%;
-        padding: 50px;
+        padding: 65px;
         width: 100%;
         position: relative;
 
@@ -50,7 +50,7 @@
   padding: 24px;
   border: 2px solid #f5c6cb;
   border-radius: 10px;
-  
+
   &__list{
     padding-left: 25px;
   }
@@ -59,8 +59,8 @@
 .form{
   width: 500px;
   margin: 0 auto 50px auto;
- 
-  
+
+
   &__field{
     width: 100%;
     padding: 10px;
@@ -68,11 +68,11 @@
     margin-top: 10px;
     font-size: 18px;
   }
-  
+
   &__wrap{
     text-align: center;
   }
-  
+
   &__button{
     padding: 15px 50px;
     border-radius: 5px;
@@ -86,7 +86,7 @@
     font-size: 16px;
     cursor: pointer;
   }
-  
+
   &__destroy{
     padding: 10px 45px 13px 45px;
     border-radius: 5px;
