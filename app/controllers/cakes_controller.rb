@@ -1,4 +1,6 @@
 class CakesController < ApplicationController
+  before_action :is_admin_user?, only: [:edit, :new]
+
     def index
       @user = current_user
       @cakes = Cake.all
@@ -40,10 +42,10 @@ class CakesController < ApplicationController
     end
 
     def destroy
-      @cake = Cake.find(params[:id])
-      @cake.destroy
-      redirect_to cakes_path
+      cake = Cake.find(params[:id])
+      cake.update(deleted_flag: true)
       flash[:notice] = "Cake was successfully destroyed."
+      redirect_to cakes_path
     end
 
     def sort
@@ -60,5 +62,11 @@ class CakesController < ApplicationController
     private
     def cake_params
     params.require(:cake).permit(:cake_name, :cost, :stock)
+    end
+
+    def is_admin_user?
+      if !current_user.admin_flag
+        redirect_to cakes_path
+      end
     end
 end

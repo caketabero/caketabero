@@ -1,1 +1,32 @@
-<h2>cake edit</h2>
+<% if @cake.errors.any? %>
+  <div class="errors">
+    <%= @cake.errors.count %>件のエラーが発生しました
+    <ul class="errors__list">
+     <% @cake.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+     <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="container">
+  <div class="form">
+    <h2 class="heading">Cake Edit</h2>
+
+    <%= form_with model: @cake, method: :patch do |f| %>
+      <%= f.label :cake_name %>
+      <%= f.text_field :cake_name, class: 'form__field' %>
+
+      <%= f.label :cost %>
+      <%= f.number_field :cost, class: 'form__field', min: 0 %>
+
+      <%= f.label :stock %>
+      <%= f.number_field :stock, class: 'form__field', min: 0 %>
+
+      <div class="form__wrap">
+        <%= f.submit 'Update', class: 'form__button' %>
+        <%= link_to 'Destroy', cake_path, method: :delete, class: 'form__destroy' %>
+      </div>
+    <% end %>
+  </div>
+</div>
