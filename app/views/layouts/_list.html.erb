@@ -1,4 +1,4 @@
-<% if current_user.admin_flag %>
+<% if current_user.admin_flag || model_name == 'Cake' %>
   <div class="container button__container">
     <% sort_buttons_text.each_with_index do |button_text, i| %>
       <% button_class = active_button_index == i ? 'button button__active' : 'button' %>
