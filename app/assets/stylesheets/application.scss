@@ -225,3 +225,93 @@ body {
     }
   }
 }
+
+.sign{
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  background-color: #99FFFF;
+  position: absolute;
+    // top: 0;
+    // right: 0;
+    // left: 0;
+    // bottom: 0;
+    margin: auto;
+    display: inline-block;
+    background: linear-gradient(180deg, #0072b4 0%, #7bc0be 72%, #afebea 100%);
+    background: -webkit-linear-gradient(-90deg, #0072b4 0%, #7bc0be 72%, #afebea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+      
+}
+
+.field {
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  padding: 5px;
+}
+
+.text{
+  // padding-top: 100px;
+  
+  &__name{
+    margin-top: 5%;
+    margin-right: 10%;
+  }
+  
+  &__mail{
+    margin-right: 10%;
+  }
+  
+  &__email{
+    margin-top: 5%;
+    margin-right: 10%;
+  }
+  
+  &__telephone{
+    margin-right: 3%;
+  }
+  
+  &__password{
+    margin-right: 8%;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .text{
+  // padding-top: 100px;
+  
+    &__name{
+      margin-top: 15%;
+      margin-right: 10%;
+    }
+    
+    &__mail{
+      margin-right: 10%;
+    }
+    
+    &__email{
+      margin-top: 15%;
+      margin-right: 10%;
+    }
+    
+    &__telephone{
+      margin-right: 3%;
+    }
+    
+    &__password{
+      margin-right: 8%;
+    }
+  }  
+}
+
+.actions{
+  color: brown;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Playfair Display', serif;
+}

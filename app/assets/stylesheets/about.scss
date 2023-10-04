@@ -1,0 +1,21 @@
+.container{
+  width: 100%;
+  padding-bottom: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  // background-color: #99FFFF;
+  position: absolute;
+}
+
+.message{
+  width: 120%;
+  height: 520px;
+    background-image: url("cake.image/cake1.jpg");
+}
+
+.login{
+  padding-bottom: 20px;
+}
