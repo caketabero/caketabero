@@ -35,7 +35,7 @@
           </li>
         <% end %>
       <% end %>
-      
+
 
     <!--ケーキ一覧の場合-->
     <% elsif model_name == 'Cake' %>
@@ -48,6 +48,7 @@
           <input type="checkbox" class="list__checkbox js__checkbox">
           <%= link_to model.cake_name, cake_path(model.id) %>
           <p>￥<%= model.cost %></p>
+          <p>在庫数：<%= model.stock %></p>
           <small><%= model.genre.name %></small>
           <% if current_user.admin_flag %>
             <p>
