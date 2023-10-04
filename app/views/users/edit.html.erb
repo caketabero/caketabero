@@ -5,7 +5,6 @@
     <li><%= message %></li>
    <% end %>
   </ul>
- <% end %>
 </div>
 
 <div class="form">
@@ -25,10 +24,9 @@
    <%=f.label :password %>
    <%=f.password_field :password, class: "form__field" %>
  
- <div class="form__wrap">
-   <%= f.submit "Update",class: "form__button" %>
-   <%= link_to "destroy", user_path, method: :delete, class: "form__destroy" %>
- </div>
-
+  <div class="form__wrap">
+    <%= f.submit "Update",class: "form__button" %>
+    <%= link_to "destroy", user_path, method: :delete, class: "form__destroy" %>
+  </div>
  <% end %>
 </div>
