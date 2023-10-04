@@ -45,6 +45,7 @@
         <% end %>
 
         <li class="list__item">
+          <input type="checkbox" class="list__checkbox js__checkbox">
           <%= link_to model.cake_name, cake_path(model.id) %>
           <p>￥<%= model.cost %></p>
           <small><%= model.genre.name %></small>
