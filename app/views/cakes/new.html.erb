@@ -8,19 +8,19 @@
 <% end %>
 
 <h1>New Cake</h1>
-<%= form_with model: @cake do |f| %>
- <h4>Product name</h4>
- <%= f.text_field :cake_name %>
+  <%= form_with model: @cake do |f| %>
+
+ <p>Product name<p>
+   <%= f.text_field :cake_name %>
  
- <>Genre</h4>
-  <%= f.text_field :genre_id
+ <p>Genre</p>
+   <%= f.text_field :genre_id %>
   
-  
-  <h4>cost</h4>
- <%= f.number_field :cost %>
+ <p>cost</p>
+   <%= f.number_field :cost %>
  
-  <h4>stock</h4>
- <%= f.number_field :stock %>
+ <p>stock</p>
+   <%= f.number_field :stock %>
  
  <%= f.submit 'create' %>
 <% end %>
