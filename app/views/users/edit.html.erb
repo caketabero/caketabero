@@ -1,28 +1,37 @@
 <% if @user.errors.any? %>
- <%= @user.errors.count %>件のエラーが発生しました
- <ul>
-  <% @user.errors.full_messages.each do |message| %>
-   <li><%= message %></li>
-  <% end %>
- </ul>
-<% end %>
+<div class="errors">
+  <%= @user.errors.count %>件のエラーが発生しました
+  <ul class="errors__list">
+   <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+   <% end %>
+  </ul>
+ <% end %>
+</div>
 
-<h1>User edit</h1>
+<div class="form">
+ 
+<h1 class= "heading">User edit</h1>
 
-<%= form_with model: @user, local: true do |f|%>
-  <%=f.label :name %><br>
-  <%=f.text_field :name %><br>
+ <%= form_with model: @user, local: true do |f|%>
+   <%=f.label :name %>
+   <%=f.text_field :name, class: "form__field" %>
+ 
+   <%=f.label :email %>
+   <%=f.email_field :email, class: "form__field" %>
+ 
+   <%=f.label :telephone_number %>
+   <%=f.telephone_field :telephone_number, class: "form__field" %>
+ 
+   <%=f.label :password %>
+   <%=f.password_field :password, class: "form__field" %>
+ 
+ <div class="form__wrap">
+   <%= f.submit "Update",class: "form__button" %>
+   <%= link_to "destroy", user_path, method: :delete, class: "form__destroy" %>
+ </div>
 
-  <%=f.label :email %><br>
-  <%=f.email_field :email %><br>
+ <% end %>
 
-  <%=f.label :telephone_number %><br>
-  <%=f.telephone_field :telephone_number %><br>
 
-  <%=f.label :password %><br>
-  <%=f.password_field :password %><br>
-
-  <%= f.submit "Update" %>
-<% end %>
-
-<%= link_to "destroy", user_path, method: :delete %>
+</div>
