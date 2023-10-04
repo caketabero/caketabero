@@ -27,10 +27,10 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     #@user.destroy
     user.update(deleted_flag: true)
-    user.save
     if user.admin_flag == true
        redirect_to :index
     else
+      sign_out current_user
       redirect_to new_user_session_path
     end
   end
