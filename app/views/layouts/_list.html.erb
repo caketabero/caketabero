@@ -22,15 +22,27 @@
 
         <% if model.id == current_user.id %>
           <li class="list__item currentuser">
-            <%= link_to model.name, edit_user_path(model.id) %>
+            <%= link_to edit_user_path(model.id) do %>
+              <%= model.name %>
+              <% if model.admin_flag %>
+                <p>管理者</p>
+              <% end %>
+            <% end %>
           </li>
         <% else %>
           <li class="list__item">
             <%= model.name %>
-              <% if current_user.admin_flag? %>
-              <p>
-                <%= link_to '編集', edit_user_path(model.id), class: 'button button__sm' %>
-              </p>
+
+            <% if current_user.admin_flag? %>
+              <% if model.admin_flag %>
+                <p>管理者</p>
+              <% end %>
+
+              <% if !model.admin_flag %>
+                <p>
+                  <%= link_to '編集', edit_user_path(model.id), class: 'button button__sm' %>
+                </p>
+              <% end %>
             <% end %>
           </li>
         <% end %>
