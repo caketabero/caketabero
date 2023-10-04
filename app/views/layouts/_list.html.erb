@@ -58,6 +58,9 @@
 
         <li class="list__item">
           <input type="checkbox" class="list__checkbox js__checkbox">
+          <div class="list__imagewrap">
+            <%= image_tag "cake.image/cake#{rand(1..5)}.jpg", class: 'list__image' %>
+          </div>
           <%= link_to model.cake_name, cake_path(model.id) %>
           <p>￥<%= model.cost %></p>
           <p>在庫数：<%= model.stock %></p>
