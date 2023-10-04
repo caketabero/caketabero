@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag 'about', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="container">
+  <div class="wrap">
+    <div class="message">
+      <h1>welcome to <strong>Cake Tabero</strong>!!</h1>
+      <p>There are various types of cakes</p>
+      <p> Eat cake and be happy!</p>
+      <div>
+        <div class="login">
+          <%= link_to 'Log in',new_user_session_path, class: "button" %>
+        </div>
+        <div class="logout">
+          <%= link_to 'Sign up',new_user_registration_path, class: "button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
