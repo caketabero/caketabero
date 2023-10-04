@@ -66,7 +66,7 @@ Genre.create!(name: "タルト")
 Genre.create!(name: "チョコレート系")
 Genre.create!(name: "季節系")
 Genre.create!(name: "その他")
-
+Genre.create!(name: "未選択")
 
 ########## ケーキ一覧の配列
 cakes = [

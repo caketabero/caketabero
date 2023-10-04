@@ -1,27 +1,42 @@
 <% if @cake.errors.any? %>
+<div class="errors">
  <%= @cake.errors.count %>件のエラーが発生しました
- <ul>
+ <ul　class="errors__list">
   <% @cake.errors.full_messages.each do |message| %>
    <li><%= message %></li>
   <% end %>
  </ul>
 <% end %>
+</div>
 
-<h1>New Cake</h1>
-  <%= form_with model: @cake do |f| %>
-
- <p>Product name<p>
-   <%= f.text_field :cake_name %>
+<div class="form">
+ <h1 class="heading">New Cake</h1>
+   <%= form_with model: @cake do |f| %>
  
- <p>Genre</p>
-   <%= f.text_field :genre_id %>
+   <%= f.label :Product_name %><br>
+    <%= f.text_field :cake_name, class: "form__field" %><br>
+    
+    <%= f.label :explanation %><br>
+     <%= f.text_area :explanation, class: "form__field" %><br>
+   
+   <%= f.label :cost %><br>
+    <%= f.number_field :cost, class: "form__field" %><br>
+    
+   <%= f.label :genre %><br>
+    <%= f.select :genre_id, [["ケーキ","ケーキ"],["ケーキ2","ケーキ2"]], class: "form__field"%><br>
+   
+   <%= f.label :stock %><br>
+    <%= f.number_field :stock, class: "form__field" %><br>
+    
+   <%= f.label :updated_name %><br>
+    <%= f.text_field :updated_name, class: "form__field"%><br>
+    
+   <%= f.label :created_name %><br>
+    <%= f.text_field :created_name, class: "form__field" %><br>
   
- <p>cost</p>
-   <%= f.number_field :cost %>
- 
- <p>stock</p>
-   <%= f.number_field :stock %>
- 
- <%= f.submit 'create' %>
+  <div class="form__wrap">
+   <%= f.submit 'create', class: "form__button" %>
+  </div> 
+</div>
 <% end %>
 
