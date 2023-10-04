@@ -27,9 +27,15 @@
         <% else %>
           <li class="list__item">
             <%= model.name %>
+              <% if current_user.admin_flag? %>
+              <p>
+                <%= link_to '編集', edit_user_path(model.id), class: 'button button__sm' %>
+              </p>
+            <% end %>
           </li>
         <% end %>
       <% end %>
+      
 
     <!--ケーキ一覧の場合-->
     <% elsif model_name == 'Cake' %>

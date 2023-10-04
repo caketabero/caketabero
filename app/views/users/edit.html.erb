@@ -6,23 +6,43 @@
   <% end %>
  </ul>
 <% end %>
-
-<h1>User edit</h1>
+<div class="sign">
+ <h1>User edit</h1>
+</div>
 
 <%= form_with model: @user, local: true do |f|%>
-  <%=f.label :name %><br>
-  <%=f.text_field :name %><br>
+  <div class="field">
+    <div class="text__name">
+     <%=f.label :name %>
+    </div>
+     <%=f.text_field :name %>
+   </div>
 
-  <%=f.label :email %><br>
-  <%=f.email_field :email %><br>
-
-  <%=f.label :telephone_number %><br>
-  <%=f.telephone_field :telephone_number %><br>
-
-  <%=f.label :password %><br>
-  <%=f.password_field :password %><br>
-
-  <%= f.submit "Update" %>
+   <div class="field">
+    <div class="text__mail">
+     <%=f.label :email %>
+    </div>
+     <%=f.email_field :email %>
+   </div>
+   
+   <div class="field">
+     <div class="text__telephone">
+      <%=f.label :telephone_number %>
+     </div>
+      <%=f.telephone_field :telephone_number %>
+   </div>
+   
+   <div class="field">
+    <div class="text__password">
+     <%=f.label :password %>
+    </div>
+     <%=f.password_field :password %>
+   </div>
+   
+   <div class="actions ">
+    <%= f.submit "Update", class: "button__sm" %>
+   </div>
 <% end %>
-
-<%= link_to "destroy", user_path, method: :delete %>
+<div class="actions ">
+ <%= link_to "destroy", user_path, method: :delete, data: { confirm: '本当に消しますか？' }, class: "button__sm" %>
+</div>
