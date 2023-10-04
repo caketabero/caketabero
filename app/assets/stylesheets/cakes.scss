@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.button.button__newcake {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  background-color: #0d6efd;
+}
+
 #cakelist {
   .list {
     &__item {
