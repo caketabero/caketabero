@@ -131,11 +131,13 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  &__logo{
-  font-family: 'Playfair Display', serif;
-  font-weight: normal;
-  font-size: 24px;
-  text-align: center;
+  
+    &__logo{
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
 }
 
@@ -166,7 +168,8 @@ body {
     list-style: none;
     overflow: hidden;
     transition: opacity 0.8s;
-
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
     &.active{
       background-color: black;
       color: gold;
