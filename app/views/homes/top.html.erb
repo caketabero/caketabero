@@ -1,14 +1,23 @@
 <%= stylesheet_link_tag 'homes', media: 'all', 'data-turbolinks-track': 'reload' %>
-<div class="slider-container">
-  <% @image_slide_animation_array.each do |i| %>
-
-    <div class="wrapper">
-      <!--each文を二つ廻す-->
-      <% i["image"].each do |j| %>
-        <%= image_tag j, class: 'slide' %>
-      <% end %>     
-    </div>
-  <% end %>
+<div class="slider-wrapper">  
+  <div class="slider-container slide-paused">
+    <% @image_slide_animation_array.each do |i| %>
+  
+      <div class="wrapper">
+        <!--each文を二つ廻す-->
+        <% i["image"].each do |j| %>
+          <%= image_tag j, class: 'slide' %>
+        <% end %>     
+      </div>
+    <% end %>
+  </div>
 </div>
-
 <div id="typewriter-text" data-current-user-name="<%= @user.name %>"></div>
+
+<div class="cake">  
+  <div class="cake__img1"></div>
+  <div class="cake__img2"></div>
+  <div class="cake__img3"></div>
+  <div class="cake__img4"></div>
+  <!--<div class="cake__img5"></div>-->
+</div>
