@@ -1,10 +1,6 @@
-$('#cakelist').html(" <%= j (
-  render 'layouts/list',
-      model_name: 'Cake',
-      models: @cakes,
-      sort_path: 'sort_cakes_path',
-      sort_buttons_text: @genre_names,
-      active_button_index: @active_button_index ) %> ");
+window.addEventListener('load', () => {
+  cakeCheckEvent();
+});
 
 function cakeCheckEvent() {
   const cakeCheckboxs = document.querySelectorAll('.js__checkbox');
@@ -15,4 +11,3 @@ function cakeCheckEvent() {
     });
   });
 }
-cakeCheckEvent();
