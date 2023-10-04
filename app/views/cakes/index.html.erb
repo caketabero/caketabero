@@ -1,6 +1,12 @@
 <h2 class="heading">Lineup</h2>
 
 <div id="cakelist">
+  <% if current_user.admin_flag? %>
+    <div class="container">
+      <%= link_to 'New Cake !!', new_cake_path, class: 'button button__lg button__newcake' %>
+    </div>
+  <% end %>
+
   <%= render 'layouts/list',
       model_name: 'Cake',
       models: @cakes,
@@ -16,10 +22,10 @@
       <br>
       <br>
       <br>
-   
-<div class="cart">      
+
+<div class="cart">
   <div id="cart-text" class="cart__action cart__color"  data-current-user-name="<%= @user.name %>"></div>
-    
+
     <div class="cart__action">
       <br>
       <br>

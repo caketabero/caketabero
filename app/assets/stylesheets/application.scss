@@ -245,7 +245,7 @@ body {
     background: -webkit-linear-gradient(-90deg, #0072b4 0%, #7bc0be 72%, #afebea 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-      
+
 }
 
 .field {
@@ -257,25 +257,25 @@ body {
 
 .text{
   // padding-top: 100px;
-  
+
   &__name{
     margin-top: 5%;
     margin-right: 10%;
   }
-  
+
   &__mail{
     margin-right: 10%;
   }
-  
+
   &__email{
     margin-top: 5%;
     margin-right: 10%;
   }
-  
+
   &__telephone{
     margin-right: 3%;
   }
-  
+
   &__password{
     margin-right: 8%;
   }
@@ -284,29 +284,29 @@ body {
 @media screen and (max-width: 760px) {
   .text{
   // padding-top: 100px;
-  
+
     &__name{
       margin-top: 15%;
       margin-right: 25%;
     }
-    
+
     &__mail{
       margin-right: 25%;
     }
-    
+
     &__email{
       margin-top: 15%;
       margin-right: 25%;
     }
-    
+
     &__telephone{
       margin-right: 8%;
     }
-    
+
     &__password{
       margin-right: 20%;
     }
-  }  
+  }
 }
 
 .actions{
