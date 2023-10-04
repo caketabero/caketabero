@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cakes, only: [:index, :show, :edit, :destory, :update] do
+  resources :cakes do
     collection do
       get 'sort'
     end
