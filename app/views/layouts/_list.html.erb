@@ -1,4 +1,4 @@
-<% if current_user.admin_flag %>
+<% if current_user.admin_flag || model_name == 'Cake' %>
   <div class="container button__container">
     <% sort_buttons_text.each_with_index do |button_text, i| %>
       <% button_class = active_button_index == i ? 'button button__active' : 'button' %>
@@ -58,6 +58,9 @@
 
         <li class="list__item">
           <input type="checkbox" class="list__checkbox js__checkbox">
+          <div class="list__imagewrap">
+            <%= image_tag "cake.image/cake#{rand(1..5)}.jpg", class: 'list__image' %>
+          </div>
           <%= link_to model.cake_name, cake_path(model.id) %>
           <p>￥<%= model.cost %></p>
           <p>在庫数：<%= model.stock %></p>

@@ -1,12 +1,12 @@
 <h2 class="heading">Lineup</h2>
 
-<div id="cakelist">
-  <% if current_user.admin_flag? %>
-    <div class="container">
-      <%= link_to 'New Cake !!', new_cake_path, class: 'button button__lg button__newcake' %>
-    </div>
-  <% end %>
+<% if current_user.admin_flag? %>
+  <div class="container">
+    <%= link_to 'New Cake !!', new_cake_path, class: 'button button__lg button__newcake' %>
+  </div>
+<% end %>
 
+<div id="cakelist">
   <%= render 'layouts/list',
       model_name: 'Cake',
       models: @cakes,

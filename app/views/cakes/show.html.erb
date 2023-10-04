@@ -1,23 +1,30 @@
-<h2>ケーキ詳細</h2>
-<table>
-  <tr>
-	  <th>名前</th>
-	  <th><%= @cake.cake_name %></th>
-  </tr>
-  <tr>
-	  <th>説明文</th>
-	  <th><%= @cake.explanation %></tkh>
-  </tr>
-  <tr>
-	  <th>値段</th>
-	  <th>￥<%= @cake.cost %></th>
-  </tr>
-  <tr>
-	  <th>ジャンル</th>
-	  <th><%= @cake.genre.name %></th>
-  </tr>
-</table> 
+<h2 class="heading">Cake Detail</h2>
 
-<%= link_to "ケーキ一覧へ", cakes_path(@cakes), class: "button" %>
-  
-  
+<div class="container detailwrap">
+
+  <div class="detailwrap__imagewrap">
+    <%= image_tag "cake.image/cake#{rand(1..5)}.jpg", class: 'detailwrap__image' %>
+  </div>
+
+  <table class="detailwrap__table">
+    <tr>
+  	  <th>名前</th>
+  	  <th><%= @cake.cake_name %></th>
+    </tr>
+    <tr>
+  	  <th>説明文</th>
+  	  <th><%= @cake.explanation %></tkh>
+    </tr>
+    <tr>
+  	  <th>値段</th>
+  	  <th>￥<%= @cake.cost %></th>
+    </tr>
+    <tr>
+  	  <th>ジャンル</th>
+  	  <th><%= @cake.genre.name %></th>
+    </tr>
+  </table>
+
+  <%= link_to "ケーキ一覧へ", cakes_path(@cakes), class: "button detailwrap__button" %>
+</div>
+
