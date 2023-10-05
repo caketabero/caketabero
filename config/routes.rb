@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :cakes do
     collection do
       get 'sort'
+      post 'stock_adjustment'
     end
   end
   get 'cake/thanks' => 'cakes#thanks', as: 'thanks'

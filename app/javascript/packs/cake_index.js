@@ -1,9 +1,9 @@
 if (location.href.slice( -5 ) == "cakes"){
   window.addEventListener('load', () => {
     const textDOM = document.getElementById('cart-text');
-    const userName = textDOM.getAttribute('data-current-user-name');
-    const text = 'カートに' + userName + '個のアイテムが入っています ';
-    const delay = 0; 
+    const cakeItems = textDOM.getAttribute('data-current-user-name');
+    const text = 'カートに' + cakeItems + '個のアイテムが入っています ';
+    const delay = 0;
     let index = 0;
     const type= () => {
       textDOM.innerHTML += text[index];
@@ -19,17 +19,17 @@ if (location.href.slice( -5 ) == "cakes"){
         cart[i].classList.toggle("visible");
         }
       });
-    
+
     // $(".cart").click(function(){
     //   $(this).toggleClass('active');
     //     $("#cart-text").toggleClass('panelactive');
     // });
-    
+
     // $("#cart-text a").click(function(){
     //   $(".cart").removeClass('active');
     //   $("#cart-text").removeClass('panelactive');
     // })
-    
+
     const intervalId = setInterval(type, delay);
   });
 }
