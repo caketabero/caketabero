@@ -11,11 +11,21 @@
 }
 
 .message{
-  width: 120%;
-  height: 520px;
-    background-image: url("cake.image/cake1.jpg");
+  width: 100vw;
+  height: 110vh;
+  object-fit:cover;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-image: url("cake.image/cake1.jpg");
 }
 
 .login{
   padding-bottom: 20px;
+}
+
+.logout > .btn__color{
+  background-color: #0000FF;
+  color: #000000;
 }
