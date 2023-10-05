@@ -18,7 +18,13 @@ class CakesController < ApplicationController
       @genres = Genre.all
       select_genres = @genres.pluck(:name)
       select_genres.shift
-      @select_genres =  select_genres
+      
+      @select_array = []
+      select_genres.each do |genre_name|
+          genre_array = [genre_name, genre_name]
+          @select_array.push(genre_array)
+     end      
+      #@select_genres =  selecselect_genres.shiftt_genres
     end
 
     def create
