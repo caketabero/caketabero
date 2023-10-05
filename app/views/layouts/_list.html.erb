@@ -56,13 +56,13 @@
           <% next %>
         <% end %>
 
-        <li class="list__item">
+        <li class="list__item" data-cake-id="<%= model.id %>">
           <input type="checkbox" class="list__checkbox js__checkbox">
           <div class="list__imagewrap">
             <%= image_tag "cake.image/cake#{rand(1..5)}.jpg", class: 'list__image' %>
           </div>
-          <%= link_to model.cake_name, cake_path(model.id) %>
-          <p>￥<%= model.cost %></p>
+          <%= link_to model.cake_name, cake_path(model.id), id: 'cake-name' %>
+          <p id="cake-cost">￥<%= model.cost %></p>
           <p>在庫数：<%= model.stock %></p>
           <small><%= model.genre.name %></small>
           <% if current_user.admin_flag %>

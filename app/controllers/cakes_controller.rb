@@ -1,5 +1,6 @@
 class CakesController < ApplicationController
   before_action :is_admin_user?, only: [:edit, :new]
+  skip_before_action :verify_authenticity_token
 
     def index
       @user = current_user
@@ -18,33 +19,32 @@ class CakesController < ApplicationController
       @genres = Genre.all
       select_genres = @genres.pluck(:name)
       select_genres.shift
-      
+
       @select_array = []
       select_genres.each do |genre_name|
           genre_array = [genre_name, genre_name]
           @select_array.push(genre_array)
-     end      
-      # @select_genres =  @select_genres.reverse
+      end
     end
 
     def create
     case params[:cake][:genre_id]
-    when "ケーキ" then 
+    when "ケーキ" then
      params[:cake][:genre_id] = 2
-     @genre_id = params[:cake][:genre_id] 
-    when "タルト" then 
+     @genre_id = params[:cake][:genre_id]
+    when "タルト" then
      params[:cake][:genre_id] = 3
-     @genre_id = params[:cake][:genre_id] 
-    when "チョコレート系" then 
+     @genre_id = params[:cake][:genre_id]
+    when "チョコレート系" then
      params[:cake][:genre_id] = 4
-     @genre_id = params[:cake][:genre_id] 
-    when "季節系" then 
+     @genre_id = params[:cake][:genre_id]
+    when "季節系" then
      params[:cake][:genre_id] = 5
-     @genre_id = params[:cake][:genre_id] 
-    when "その他" then 
+     @genre_id = params[:cake][:genre_id]
+    when "その他" then
      params[:cake][:genre_id] = 6
-     @genre_id = params[:cake][:genre_id] 
-    when "未選択" then 
+     @genre_id = params[:cake][:genre_id]
+    when "未選択" then
      params[:cake][:genre_id] = 7
      @genre_id = params[:cake][:genre_id]
     end
@@ -96,6 +96,16 @@ class CakesController < ApplicationController
       end
       @genre_names = Genre.all.map { |genre| genre.name }
       @active_button_index = genre.id - 1
+    end
+
+    def stock_adjustment
+      cakes_id = params[:cakes_id]
+      cakes_id.each do |cake_id|
+        cake = Cake.find(cake_id)
+        cake.update(stock: cake.stock - 1)
+        # cake.save
+      end
+      # redirect_to thanks_path
     end
 
     private

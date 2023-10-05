@@ -12,33 +12,33 @@
 <div class="form">
  <h1 class="heading">New Cake</h1>
    <%= form_with model: @cake do |f| %>
- 
+
    <%= f.label :Product_name %>
     <%= f.text_field :cake_name, class: "form__field" %>
-    
+
     <%= f.label :explanation %>
      <%= f.text_area :explanation, class: "form__field" %>
-   
+
    <%= f.label :cost %>
     <%= f.number_field :cost, min: 0, class: "form__field" %>
-    
+
    <%= f.label :genre %>
    <p>
     <%= f.select :genre_id, @select_array, disabled:true, class: "form__field"%>
    </p>
-   
+
    <%= f.label :stock %>
     <%= f.number_field :stock, min: 0, class: "form__field" %>
-    
+
    <%= f.label :updated_name %>
     <%= f.text_field :updated_name, class: "form__field"%>
-    
+
    <%= f.label :created_name %>
     <%= f.text_field :created_name, class: "form__field" %>
-  
+
   <div class="form__wrap">
    <%= f.submit 'create', class: "form__button" %>
-  </div> 
+  </div>
 </div>
 <% end %>
 
