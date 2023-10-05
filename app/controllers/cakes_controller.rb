@@ -24,8 +24,7 @@ class CakesController < ApplicationController
       select_genres.each do |genre_name|
           genre_array = [genre_name, genre_name]
           @select_array.push(genre_array)
-     end
-      #@select_genres =  selecselect_genres.shiftt_genres
+      end
     end
 
     def create
