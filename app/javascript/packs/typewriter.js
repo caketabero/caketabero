@@ -5,7 +5,7 @@ if (location.href.slice( -1 ) == "/"){
 //const text = 'ようこそ@user.さん ';
 
     let textDOM = document.getElementById('typewriter-text');
-    console.log(textDOM);
+    // console.log(textDOM);
     let userName = textDOM.getAttribute('data-current-user-name');
     //console.log(userName);
     const text = 'ようこそ' + userName + 'さん ';
