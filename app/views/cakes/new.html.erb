@@ -23,7 +23,9 @@
     <%= f.number_field :cost, min: 0, class: "form__field" %>
     
    <%= f.label :genre %>
-    <%= f.select :genre_id, [["選択肢","選択肢"],["ケーキ","ケーキ"],["チョコレート系","チョコレート系"],["タルト","タルト"],["季節系","季節系"],["その他","その他"],["未選択","未選択"]], class: "form__field"%>
+   <p>
+    <%= f.select :genre_id, @select_array.reverse, disabled:true, class: "form__field"%>
+   </p>
    
    <%= f.label :stock %>
     <%= f.number_field :stock, min: 0, class: "form__field" %>
