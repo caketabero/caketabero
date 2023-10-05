@@ -52,7 +52,7 @@ class CakesController < ApplicationController
        user_id:current_user.id,
        genre_id:@genre_id,
        )
-       @select_genres = @genre_id
+      # @select_genres = @genre_id
      if @cake.save
       redirect_to cakes_path
      else
