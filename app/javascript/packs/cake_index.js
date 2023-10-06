@@ -10,7 +10,7 @@ if (location.href.slice( -5 ) == "cakes") {
     cakeCheckboxs.forEach((checkbox) => {
       // それぞれチェックボックスにイベント付与
       checkbox.addEventListener('change', (event) => {
-
+        
         // チェックされたチェックボックスをすべて取得
         const checked_boxs = document.querySelectorAll('input[type="checkbox"]:checked');
 
